@@ -281,20 +281,40 @@
 
 #theia-bottom-content-panel .p-TabBar-tab {
     background: inherit;
+    font-size: var(--theia-ui-font-size0);
+    margin: 2px 10px;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
-#theia-bottom-content-panel .p-TabBar-tab:not(.p-mod-current) {
-    color: var(--theia-panelTitle-inactiveForeground);
-    border-top: var(--theia-border-width) solid  var(--theia-panel-background);
+#theia-bottom-content-panel .p-TabBar-tab:first-of-type {
+    margin: 2px 10px 2px 18px;
 }
 
-#theia-bottom-content-panel .p-TabBar-tab.p-mod-current {
+#theia-bottom-content-panel .theia-tab-icon-label {
+    padding-right: 2px;
+    padding-left: 2px;
+    text-transform: uppercase;
+}
+
+#theia-bottom-content-panel .p-TabBar-tab.p-mod-current .theia-tab-icon-label {
     color: var(--theia-panelTitle-activeForeground);
-    border-top: var(--theia-border-width) solid var(--theia-panelTitle-activeBorder);
+    border-bottom: var(--theia-border-width) solid var(--theia-panelTitle-activeBorder);
 }
 
-#theia-bottom-content-panel .p-TabBar-tab.p-mod-current.theia-mod-active {
-    border-top-color: var(--theia-focusBorder);
+#theia-bottom-content-panel .p-TabBar-tab:not(.p-mod-current) .theia-tab-icon-label {
+    color: var(--theia-panelTitle-inactiveForeground);
+    border-bottom: var(--theia-border-width) solid  var(--theia-panel-background);
+}
+
+#theia-bottom-content-panel .p-TabBar-tab.p-mod-current .theia-tab-icon-label {
+    color: var(--theia-panelTitle-activeForeground);
+    border-bottom: var(--theia-border-width) solid var(--theia-panelTitle-activeBorder);
+}
+
+#theia-bottom-content-panel .p-TabBar-tabIcon,
+#theia-bottom-content-panel .p-TabBar-tabCloseIcon {
+    display: none;
 }
 
 /*-----------------------------------------------------------------------------
@@ -343,7 +363,7 @@
     color: var(--theia-icon-foreground);
 }
 
-.theia-sidepanel-toolbar .p-TabBar-toolbar .item > div{
+.theia-sidepanel-toolbar .p-TabBar-toolbar .item > div {
     height: 18px;
     width: 18px;
     background-repeat: no-repeat;
